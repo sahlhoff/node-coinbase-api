@@ -23,12 +23,12 @@ Generates a new bitcoin receive address for the user.
 
 ### Buttons
 
-##### POST https://coinbase.com/api/v1/buttons
+##### POST /api/v1/buttons
 Create a new payment button, page, or iFrame.
 
 ### Buys
 
-##### POST https://coinbase.com/api/v1/buys
+##### POST /api/v1/buys
 Purchase bitcoin by debiting your U.S. bank account.
 
 ### Contacts
