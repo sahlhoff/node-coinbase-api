@@ -1,6 +1,6 @@
 {
   "name": "ballin-coinbase-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Nodejs coinbase api",
   "main": "/src/coinbase.js",
   "scripts": {
