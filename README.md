@@ -8,8 +8,10 @@ Coinbase's api [details here](https://coinbase.com/api/doc)
 $ npm install ballin-coinbase-api
 ```
 
+Require coinbase
+
 ```
-var coinbase = require('ballin-coinbase-api')
+var coinbase = require('ballin-coinbase-api');
 ```
 
 ## Usage
@@ -48,31 +50,91 @@ coinbase.account.generateReceiveAddress(accessToken, function(err, address){
 ##### POST /api/v1/buttons
 Create a new payment button, page, or iFrame.
 
+```
+var param = {
+    "button": {
+        "name": "test",
+        "type": "buy_now",
+        "price_string": "1.23",
+        "price_currency_iso": "USD",
+        "custom": "Order123",
+        "callback_url": "http://www.example.com/my_custom_button_callback",
+        "description": "Sample description",
+        "type": "buy_now",
+        "style": "custom_large",
+        "include_email": true
+    }
+}
+
+coinbase.buttons.create(accessToken, param, function(err, button){
+   console.log(button); 
+});
+```
+
 ### Buys
 
 ##### POST /api/v1/buys
 Purchase bitcoin by debiting your U.S. bank account.
+
+```
+var param = {
+    {
+        "qty": 1
+    }
+}
+
+coinbase.buy(accessToken, param, function(err, buy){
+    console.log(buy);
+});
+```
 
 ### Contacts
 
 ##### GET /api/v1/contacts
 List emails the user has previously used for autocompletion.
 
+```
+coinbase.contacts(accessToken, function(err, contacts){
+    console.log(contacts);
+});
+```
+
 ### Currencies
 
 ##### GET /api/v1/currencies
 Show currencies supported by Coinbase.
 
+```
+coinbase.currencies.list(accessToken, function(err, currencies){
+    console.log(currencies);
+});
+```
+
 ##### GET /api/v1/currencies/exchange_rates
 Show exchange rates between BTC and other currencies.
+```
+coinbase.currencies.exchangeRates(function(err, rates){
+    console.log(rates);
+});
+```
 
 ### Orders
 
 ##### GET /api/v1/orders
 List merchant orders received.
+```
+coinbase.orders.list(accessToken, function(err, orders){
+    console.log(orders);
+});
+```
 
 ##### GET /api/v1/orders/:id
 Show an individual merchant order.
+```
+coinbase.orders.get(accessToken, id, function(err, order){
+    console.log(order);
+});
+```
 
 ### Prices
 
