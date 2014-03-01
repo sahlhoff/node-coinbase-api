@@ -138,42 +138,95 @@ coinbase.orders.get(accessToken, id, function(err, order){
 
 ### Prices
 
-##### GET /api/v1/prices/buy
-Get the total buy price for some bitcoin amount.
-
 ##### GET /api/v1/prices/spot_rate
 Get the spot price of bitcoin.
-
-##### GET /api/v1/prices/sell
-Get the total sell price for some bitcoin amount.
+```
+coinbase.spot_rate(function(err, spotRate){
+    console.log(spotRate);
+});
+```
 
 ### Transactions
 
 ##### GET /api/v1/transactions
 List a user's recent transactions.
+```
+coinbase.transactions.list(accessToken, param, function(err, transactions){
+    console.log(transactions);
+});
+```
 
 ##### GET /api/v1/transactions/:id
 Show details for an individual transaction.
+```
+coinbase.transactions.get(accessToken, id, function(err, transaction){
+    console.log(transaction);
+});
+```
 
 ##### POST /api/v1/transactions/send_money
 Send bitcoins to an email address or bitcoin address.
+```
+var transaction = {
+    "transaction": {
+        "to": "chad@sahlhoff.com",
+        "amount": "1.234",
+        "notes": "Sample transaction for you"
+    }
+}
+coinbase.transactions.sendMoney(accessToken, transaction, function(err, data){
+    console.log(data);
+});
+```
 
 ##### POST /api/v1/transactions/request_money
 Send an invoice/money request to an email address.
+```
+var transaction = {
+        "transaction": {
+        "from": "user1@example.com",
+        "amount": "1.234",
+        "notes": "Sample transaction for you"
+    }
+}
+coinbase.transactions.requestMoney(accessToken, transaction, function(err, data){
+    console.log(data);
+});
+```
 
 ##### PUT /api/v1/transactions/:id/resend_request
 Resend emails for a money request.
+```
+coinbase.transactions.resendRequest(accessToken, id, function(err, data){
+    console.log(data);
+});
+```
 
 ##### DELETE /api/v1/transactions/:id/cancel_request
 Cancel a money request.
+```
+coinbase.transactions.cancelRequest(accessToken, id, function(err, data){
+    console.log(data);
+});
+```
 
 ### Transfers
 
 ##### GET /api/v1/transfers
 List a user's recent buys and sells.
+```
+coinbase.transfers.list(accessToken, function(err, transfers){
+    console.log(transfers);
+});
+```
 
 ### Users
 
 ##### GET /api/v1/users
 Show current user with account settings.
+```
+coinbase.users.account(accessToken, function(err, account){
+    console.log(account);
+});
+```
 
