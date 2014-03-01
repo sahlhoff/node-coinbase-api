@@ -8,6 +8,10 @@ Coinbase's api [details here](https://coinbase.com/api/doc)
 $ npm install ballin-coinbase-api
 ```
 
+```
+var coinbase = require('ballin-coinbase-api')
+```
+
 ## Usage
 
 ### Account
@@ -15,11 +19,29 @@ $ npm install ballin-coinbase-api
 ##### GET /api/v1/account/balance
 Get the user's account balance in BTC.
 
+```
+coinbase.account.balance(accessToken, function(err, balance){
+    console.log(balance);
+});
+```
+
 ##### GET /api/v1/account/receive_address
 Get the user's current bitcoin receive address.
 
+```
+coinbase.account.receiveAddress(acessToken, function(err, address){
+    console.log(address); 
+});
+```
+
 ##### GET /api/v1/account/generate_receive_address
 Generates a new bitcoin receive address for the user.
+
+```
+coinbase.account.generateReceiveAddress(accessToken, function(err, address){
+    console.log(address);
+});
+```
 
 ### Buttons
 
