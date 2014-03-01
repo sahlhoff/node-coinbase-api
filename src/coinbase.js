@@ -151,7 +151,7 @@ function Coinbase (options) {
     post(url, param, callback);
   };
 
-  /* /api/v1/contacts */
+  /* GET /api/v1/contacts */
   this.contacts = function (accessToken, callback) {
     var url = self.baseUrl + 'contacts' + '?access_token=' + accessToken;
     

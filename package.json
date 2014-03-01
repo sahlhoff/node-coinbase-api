@@ -1,0 +1,32 @@
+{
+  "name": "ballin-coinbase-api",
+  "version": "0.0.0",
+  "description": "Nodejs coinbase api",
+  "main": "/src/coinbase.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/sahlhoff/ballin-coinbase-api"
+  },
+  "keywords": [
+    "node",
+    "api",
+    "lib",
+    "bitcoin",
+    "coinbase",
+    "ballin",
+    "btc"
+  ],
+  "author": "Chad Sahlhoff",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "65417919970f9c0abbc006664f1c5ae45586e9bf",
+  "bugs": {
+    "url": "https://github.com/sahlhoff/ballin-coinbase-api/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
