@@ -31,7 +31,7 @@ coinbase.account.balance(accessToken, function(err, balance){
 Get the user's current bitcoin receive address.
 
 ```
-coinbase.account.receiveAddress(acessToken, function(err, address){
+coinbase.account.receiveAddress(accessToken, function(err, address){
     console.log(address); 
 });
 ```
@@ -141,7 +141,7 @@ coinbase.orders.get(accessToken, id, function(err, order){
 ##### GET /api/v1/prices/spot_rate
 Get the spot price of bitcoin.
 ```
-coinbase.spot_rate(function(err, spotRate){
+coinbase.spotRate(function(err, spotRate){
     console.log(spotRate);
 });
 ```

@@ -219,7 +219,7 @@ function Coinbase (options) {
   };
 
   /* GET /api/v1/prices/spot_rate */
-  this.prices.spot_rate = function(callback) {
+  this.prices.spotRate = function(callback) {
     var url = self.baseUrl + 'prices/spot_rate';
 
     console.log('get ' + url);
