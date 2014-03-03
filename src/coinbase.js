@@ -94,7 +94,6 @@ function Coinbase (options) {
   this.account.balance = function (accessToken, callback) {
     var url = self.baseUrl + 'account/balance' + '?access_token=' + accessToken;
   
-    console.log('get ' + url);
   
     get(url, callback);
   };
@@ -103,7 +102,6 @@ function Coinbase (options) {
   this.account.receiveAddress = function (accessToken, callback) {
     var url = self.baseUrl + 'account/receive_address' + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -119,7 +117,6 @@ function Coinbase (options) {
     
     if (callbackUrl) options.address = { callback_url: callbackUrl };
     
-    console.log('post ' + url + ' with options ' + util.inspect(options));
     
     post(url, options, callback);
   };
@@ -130,7 +127,6 @@ function Coinbase (options) {
   this.buttons.create = function (accessToken, param, callback) {
     var url = self.baseUrl + 'buttons' + '?access_token=' + accessToken;
     
-    console.log('post ' + url);
     
     post(url, param, function (err, data) {
       if (err) {
@@ -146,7 +142,6 @@ function Coinbase (options) {
 
     var url = self.baseUrl + 'buttons' + '?access_token=' + accessToken;
     
-    console.log('post ' + url);
     
     post(url, param, callback);
   };
@@ -155,7 +150,6 @@ function Coinbase (options) {
   this.contacts = function (accessToken, callback) {
     var url = self.baseUrl + 'contacts' + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -166,7 +160,6 @@ function Coinbase (options) {
   this.currencies.list = function (accessToken, callback) {
     var url = self.baseUrl + 'currencies' + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -175,7 +168,6 @@ function Coinbase (options) {
   this.currencies.exchangeRates = function (callback) {
     var url = self.baseUrl + 'currencies/exchange_rates';
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -186,7 +178,6 @@ function Coinbase (options) {
   this.orders.list = function (accessToken, callback) {
     var url = self.baseUrl + 'orders' + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   }
@@ -195,7 +186,6 @@ function Coinbase (options) {
   this.orders.get = function (accessToken, id, callback) {
     var url = self.baseUrl + 'orders/' + id + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   }
@@ -213,7 +203,6 @@ function Coinbase (options) {
     if (options.qty) url = url + '&qty=' + options.qty;
     if (options.currency) url = url + '&currency=' + options.currency;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -222,7 +211,6 @@ function Coinbase (options) {
   this.prices.spotRate = function(callback) {
     var url = self.baseUrl + 'prices/spot_rate';
 
-    console.log('get ' + url);
 
     get(url, callback);
   }
@@ -238,7 +226,6 @@ function Coinbase (options) {
     if (options.qty) url = url + '&qty=' + options.qty;
     if (options.currency) url = url + '&currency=' + options.currency;
 
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -253,7 +240,6 @@ function Coinbase (options) {
     
     var url = self.baseUrl + 'transactions' + '?access_token=' + accessToken + '&page=' + page;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -262,7 +248,6 @@ function Coinbase (options) {
   this.transactions.get = function (accessToken, id, callback) {
     var url = self.baseUrl + 'transactions/' + id + '?access_token=' + accessToken;
     
-    console.log('get ' + url);
     
     get(url, callback);
   };
@@ -272,7 +257,6 @@ function Coinbase (options) {
     var url = self.baseUrl + 'transactions/send_money' + '?access_token=' + accessToken;
     var body = {};
     body.transaction = transaction;
-    console.log('post' + url);
 
     post(url, body, callback);
   }
@@ -281,7 +265,6 @@ function Coinbase (options) {
   this.transactions.requestMoney = function(accessToken, transaction, callback){
     var url = self.baseUrl + 'transactions/request_money' + '?access_token=' + accessToken;
 
-    console.log('post' + url);
 
     post(url, transaction, callback);
   }
@@ -291,7 +274,6 @@ function Coinbase (options) {
     var url = self.baseUrl + 'transactions/' + id + '/resend_request'  + '?access_token=' + accessToken;
     var param = {}
 
-    console.log('put' + url);
 
     post(url, param, callback);
   }
@@ -300,7 +282,6 @@ function Coinbase (options) {
   this.transactions.cancelRequest = function(accessToken, id, callback){
     var url = self.baseUrl + 'transactions/' + id + '/cancel_request' + '?access_token=' + accessToken;
 
-    console.log('delete', url);
 
     del(url, callback);
   }
@@ -310,7 +291,6 @@ function Coinbase (options) {
     var url = self.baseUrl + 'transactions/' + id + '/complete_request' + '?access_token=' + accessToken;
     var param = {};
 
-    console.log('put', url);
 
     post(url, param, callback);
   }
@@ -321,8 +301,7 @@ function Coinbase (options) {
   /* GET /api/v1/transfers */
   this.transfers.list = function (accessToken, callback) {
     var url = self.baseUrl + 'transfers' + '?access_token=' + accessToken;
-    
-    console.log('get ' + url);
+
     
     get(url, callback);
   }
@@ -333,7 +312,6 @@ function Coinbase (options) {
   this.users.account = function(accessToken, callback) {
     var url = self.baseUrl + 'users' + '?access_token=' + accessToken;
 
-    console.log('get ' + url);
 
     get(url, callback);
   }

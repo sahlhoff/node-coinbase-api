@@ -11,7 +11,9 @@ $ npm install ballin-coinbase-api
 Require coinbase
 
 ```
-var coinbase = require('ballin-coinbase-api');
+var Coinbase = require('ballin-coinbase-api');
+
+coinbase = new Coinbase();
 ```
 
 ## Usage
